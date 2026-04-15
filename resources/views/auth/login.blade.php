@@ -131,6 +131,56 @@
     </div>
 </div>
 
+<!-- Bottom Bar - Beta Testing Notice -->
+<div class="bottom-bar" id="bottomBar" style="position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 1rem 2rem; z-index: 1001; box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: center; gap: 1rem;">
+    <div style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; animation: pulse 2s infinite;">
+        <i class="fas fa-flask"></i>
+    </div>
+    <div style="flex: 1; max-width: 800px;">
+        <div style="font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem;">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 0.5rem;"></i>BETA TESTING MODE - LOCAL DEVELOPMENT
+        </div>
+        <p style="font-size: 0.85rem; opacity: 0.95; margin: 0;">
+            This is a beta version running locally. For deployment, see DEPLOYMENT.md file. Laravel requires PHP hosting (Heroku, Railway, Render, etc.) - Netlify is not compatible.
+        </p>
+    </div>
+    <button onclick="document.getElementById('bottomBar').style.display='none'" style="width: 32px; height: 32px; background: rgba(255, 255, 255, 0.2); border: none; border-radius: 8px; color: white; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center;">
+        <i class="fas fa-times"></i>
+    </button>
+</div>
+
+<style>
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 576px) {
+    .bottom-bar {
+        padding: 0.75rem 1rem !important;
+        flex-wrap: wrap;
+    }
+    
+    .bottom-bar > div:first-child {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+    }
+    
+    .bottom-bar > div:nth-child(2) > div {
+        font-size: 0.9rem !important;
+    }
+    
+    .bottom-bar > div:nth-child(2) > p {
+        font-size: 0.75rem !important;
+    }
+}
+</style>
+
 <style>
 /* Modern Login Container */
 .login-container {
